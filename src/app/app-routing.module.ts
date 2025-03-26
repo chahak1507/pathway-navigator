@@ -9,24 +9,45 @@ import { CareerExplorationComponent } from './components/career-exploration/care
 import { CourseTrackingComponent } from './components/course-tracking/course-tracking.component';
 import { TrainingCentersComponent } from './components/training-centers/training-centers.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginSignupComponent},
+  { path: '', component: LoginSignupComponent },
   // { path: 'home', loadComponent: ()=> import('./components/home/home.component').then(a=>a.HomeComponent)},
 
-  { path: 'home', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent},
-  { path: 'trades', component: TradeListComponent },
-  { path: 'trade/:id', component: TradeDetailsComponent },
-  { path: 'test', component: PsychometricTestComponent },
-  { path: 'career-exploration', component: CareerExplorationComponent },
-  { path: 'course-tracking', component: CourseTrackingComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'trades', component: TradeListComponent, canActivate: [AuthGuard] },
+  {
+    path: 'trade/:id',
+    component: TradeDetailsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'test',
+    component: PsychometricTestComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'career-exploration',
+    component: CareerExplorationComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'course-tracking',
+    component: CourseTrackingComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'login-signup', component: LoginSignupComponent },
-  { path: 'training-centers', component: TrainingCentersComponent }
+  {
+    path: 'training-centers',
+    component: TrainingCentersComponent,
+    canActivate: [AuthGuard],
+  },
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}
