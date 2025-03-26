@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-psychometric-test',
   templateUrl: './psychometric-test.component.html',
-  styleUrls: ['./psychometric-test.component.css']
+  styleUrls: ['./psychometric-test.component.css'],
 })
 export class PsychometricTestComponent {
   answers = {
@@ -16,10 +16,14 @@ export class PsychometricTestComponent {
     teamwork: '',
     numbers: '',
     creativity: '',
-    business: ''
+    business: '',
   };
 
   resultText = 'Take the test to see your result.';
+
+  ngOnInit(): void {
+    this.fetchUserPsychometricTest();
+  }
 
   onSubmit() {
     const answers = this.answers;
@@ -41,9 +45,79 @@ export class PsychometricTestComponent {
     } else if (answers.business === 'yes') {
       result += 'Entrepreneurship, Marketing, or Business Administration.';
     } else {
-      result += 'A multidisciplinary career like Project Management or Digital Marketing.';
+      result +=
+        'A multidisciplinary career like Project Management or Digital Marketing.';
     }
 
     this.resultText = result;
+    this.submitPsychometricTest(result);
+  }
+
+  async submitPsychometricTest(resultText: string) {
+    try {
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUSer')!);
+
+      if (!loggedInUser || !loggedInUser.email) {
+        throw new Error('No logged-in user found');
+      }
+      const testSubmissionData = {
+        resultText,
+        email: loggedInUser.email,
+      };
+
+      // Make the POST request
+      const response = await fetch('http://localhost:3000/api/test', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(testSubmissionData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          errorData.message || 'Failed to submit psychometric test'
+        );
+      }
+    } catch (error) {
+      console.error('Error submitting psychometric test:', error);
+    }
+  }
+
+  async fetchUserPsychometricTest() {
+    try {
+      const storedUser = localStorage.getItem('loggedInUSer');
+      if (!storedUser) throw new Error('No authenticated user found');
+      const user = JSON.parse(storedUser);
+
+      const response = await fetch(`/api/test/${user.email}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.status === 404) {
+        return null;
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          errorData.message || 'Failed to fetch psychometric test'
+        );
+      }
+
+      const testData = await response.json();
+      if (testData && testData.resultText)
+        this.resultText = testData.resultText;
+
+      return testData;
+    } catch (error) {
+      // Log the error and rethrow or handle as needed
+      console.error('Error fetching psychometric test:', error);
+      throw error;
+    }
   }
 }
