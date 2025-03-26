@@ -32,9 +32,32 @@ export class LoginSignupComponent implements OnInit {
     if (response) {
       const payLoad = this.decodeToken(response.credential);
       localStorage.setItem('loggedInUSer', JSON.stringify(payLoad));
-      // this.heading = 'Profile';
-      console.log(response);
       this.router.navigate(['profile']);
+      this.addUser({
+        name: payLoad.name,
+        email: payLoad.email,
+        picture: payLoad.picture,
+      });
+    }
+  }
+
+  async addUser(user: { name: string; email: string; picture: string }) {
+    try {
+      const response = await fetch('http://localhost:3000/api/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to add user');
+      }
+    } catch (error) {
+      console.error('Error:', error);
     }
   }
 }
