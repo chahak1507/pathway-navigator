@@ -43,13 +43,16 @@ export class LoginSignupComponent implements OnInit {
 
   async addUser(user: { name: string; email: string; picture: string }) {
     try {
-      const response = await fetch('http://localhost:3000/api/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        'https://pathway-navigator-backend.onrender.com/api/user',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(user),
+        }
+      );
 
       const data = await response.json();
 
