@@ -66,13 +66,16 @@ export class PsychometricTestComponent {
       };
 
       // Make the POST request
-      const response = await fetch('http://localhost:3000/api/test', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(testSubmissionData),
-      });
+      const response = await fetch(
+        'https://pathway-navigator-backend.onrender.com/api/test',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(testSubmissionData),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -92,7 +95,7 @@ export class PsychometricTestComponent {
       const user = JSON.parse(storedUser);
 
       const response = await fetch(
-        `http://localhost:3000/api/test/${user.email}`,
+        `https://pathway-navigator-backend.onrender.com/api/test/${user.email}`,
         {
           method: 'GET',
           headers: {
