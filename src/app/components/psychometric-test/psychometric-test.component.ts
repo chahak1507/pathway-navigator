@@ -91,12 +91,15 @@ export class PsychometricTestComponent {
       if (!storedUser) throw new Error('No authenticated user found');
       const user = JSON.parse(storedUser);
 
-      const response = await fetch(`/api/test/${user.email}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await fetch(
+        `http://localhost:3000/api/test/${user.email}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
       if (response.status === 404) {
         return null;
