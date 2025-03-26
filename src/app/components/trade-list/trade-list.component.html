@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Available Trades</title>
+    <!-- <link rel="stylesheet" href="trades_styles.css"> -->
+</head>
+<body>
+        <h1>Available Trades</h1>
+    
+    <section class="section">
+        <h2>Explore Various Vocational Trades</h2>
+        <p>Find the best trade for your career by exploring the available options below.</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Sector</th>
+                <th>Cost</th>
+                <th>Job Prospects</th>
+                <th>Details</th>
+            </tr>
+            <tr *ngFor="let trade of trades">
+                <td>{{ trade.name }}</td>
+                <td>{{ trade.sector }}</td>
+                <td>{{ trade.cost }}</td>
+                <td>{{ trade.jobProspects }}</td>
+                <td><a routerLink="/trade/{{trade.id}}">View Details</a></td>
+            </tr>
+        </table>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Career Choice Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

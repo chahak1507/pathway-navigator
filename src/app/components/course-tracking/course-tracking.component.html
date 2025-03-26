@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Tracking</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0F172A;  /* Dark blue-gray */
+            color: #E2E8F0;  /* Light gray */
+            font-family: "Inter", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #38BDF8; /* Light blue */
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Section Styles */
+        .section {
+            width: min(65rem, 95%);
+            background: #1E293B; /* Darker blue */
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            box-shadow: 0px 4px 12px rgba(56, 189, 248, 0.15);
+        }
+
+        .section h2 {
+            color: #38BDF8; /* Light blue */
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Career Grid */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .career-option {
+            background: #334155; /* Dark blue-gray */
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .career-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .career-option h3 {
+            color: #FACC15; /* Yellow */
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .career-option p {
+            font-size: 14px;
+            color: #CBD5E1;
+            margin-bottom: 10px;
+        }
+
+        .career-option ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .career-option ul li {
+            font-size: 14px;
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 6px;
+            color: #A5F3FC; /* Teal */
+        }
+
+        .career-option ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #FACC15; /* Yellow */
+        }
+
+        /* Button */
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #FACC15; /* Yellow */
+            color: #1E293B; /* Dark background */
+            padding: 10px 0;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #EAB308; /* Darker Yellow */
+        }
+
+        /* Tracking List */
+        .tracking-list {
+            list-style: none;
+            font-size: 16px;
+            padding-left: 1rem;
+        }
+
+        .tracking-list li {
+            margin-bottom: 0.8rem;
+            color: #A5F3FC; /* Teal */
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tracking-list li::before {
+            content: "➜";
+            position: absolute;
+            left: 0;
+            color: #FACC15; /* Yellow */
+        }
+
+    </style>
+</head>
+<body>
+    <div style="margin-top: 100px;"></div>
+
+    <h1>Course Tracking & Career Roadmap</h1>
+
+    <!-- Career Paths Section -->
+    <section class="section">
+        <h2>Career Options & Learning Paths</h2>
+        <!-- <p style="text-align: center; color: #CBD5E1;">Choose a career and follow a structured learning path to success.</p> -->
+        
+        <div class="career-grid">
+            <div class="career-option">
+                <h3>Software Development</h3>
+                <p>Master coding, algorithms, and software engineering principles.</p>
+                <ul>
+                    <li>Programming Basics (Python, Java, C++)</li>
+                    <li>Data Structures & Algorithms</li>
+                    <li>Full-Stack Development</li>
+                    <li>Internships & Live Projects</li>
+                </ul>
+                <button class="btn">View Courses</button>
+            </div>
+
+            <div class="career-option">
+                <h3>Cybersecurity</h3>
+                <p>Protect systems and data with ethical hacking and security training.</p>
+                <ul>
+                    <li>Network Security & Firewalls</li>
+                    <li>Penetration Testing</li>
+                    <li>Cyber Laws & Compliance</li>
+                    <li>Real-World Simulations</li>
+                </ul>
+                <button class="btn">View Courses</button>
+            </div>
+
+            <div class="career-option">
+                <h3>Data Science</h3>
+                <p>Analyze and interpret data to drive business decisions.</p>
+                <ul>
+                    <li>Statistics & Probability</li>
+                    <li>Python for Data Science</li>
+                    <li>Machine Learning & AI</li>
+                    <li>Big Data & Cloud Platforms</li>
+                </ul>
+                <button class="btn">View Courses</button>
+            </div>
+
+            <div class="career-option">
+                <h3>Graphic Design</h3>
+                <p>Learn design fundamentals and tools for creative careers.</p>
+                <ul>
+                    <li>Adobe Photoshop & Illustrator</li>
+                    <li>Typography & Color Theory</li>
+                    <li>UI/UX Design & Prototyping</li>
+                    <li>Freelancing & Job Market</li>
+                </ul>
+                <button class="btn">View Courses</button>
+            </div>
+
+            <div class="career-option">
+                <h3>Automobile Engineering</h3>
+                <p>Get skilled in vehicle mechanics, repair, and design.</p>
+                <ul>
+                    <li>Vehicle Mechanism & Repair</li>
+                    <li>Automobile Designing</li>
+                    <li>Internships at Auto Companies</li>
+                </ul>
+                <button class="btn">View Courses</button>
+            </div>
+
+            <div class="career-option">
+                <h3>Cloud Computing & DevOps</h3>
+                <p>Master cloud services, infrastructure automation, and CI/CD pipelines.</p>
+                <ul>
+                    <li>Introduction to Cloud (AWS, Azure, Google Cloud)</li>
+                    <li>Linux & Shell Scripting for Automation</li>
+                    <li>Docker & Kubernetes</li>
+                    <li>CI/CD & Infrastructure as Code (Terraform, Ansible)</li>
+                </ul>
+                <button class="btn">View Courses</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section class="section">
+        <h2>How to Track Your Progress?</h2>
+        <!-- <p style="text-align: center; color: #CBD5E1;">Monitor your learning journey and achieve career milestones.</p> -->
+        <ul class="tracking-list">
+            <li>Enroll in a vocational course of your choice.</li>
+            <li>Complete modules & practical assignments.</li>
+            <li>Track your learning progress on a personalized dashboard.</li>
+            <li>Take exams and earn industry-recognized certifications.</li>
+            <li>Apply for jobs or internships in your field.</li>
+        </ul>
+    </section>
+
+</body>
+</html>

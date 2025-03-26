@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Exploration</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFD700;
+        }
+
+        /* Section Container */
+        .section {
+            width: min(65rem, 95%);
+            background: #1E1E1E;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Career Grid */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .career-card {
+            background: #232323;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .career-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.25);
+        }
+
+        .career-card h3 a {
+            text-decoration: none;
+            color: #FFD700;
+            font-size: 18px;
+        }
+
+        .career-card h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .career-card p {
+            font-size: 14px;
+            margin-top: 8px;
+            color: #BDBDBD;
+        }
+
+        /* Career Tips */
+        .career-tips {
+            list-style: none;
+            padding-left: 1rem;
+            font-size: 16px;
+        }
+
+        .career-tips li {
+            margin-bottom: 0.8rem;
+            color: #E0E0E0;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: #E74C3C;
+            color: #FFF;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #C0392B;
+        }
+
+    </style>
+</head>
+<body>
+<div style="margin-top: 100px;"></div>
+    <h1>Career Exploration</h1>
+
+    <!-- Career Paths -->
+    <section class="section">
+        <h2>Explore Vocational Career Paths</h2>
+        <p style="text-align: center; color: #BDBDBD;">Discover exciting career opportunities that match your skills and interests.</p>
+        
+        <div class="career-grid">
+            <div class="career-card">
+                <h3><a href="/careers/healthcare">Healthcare</a></h3>
+                <p>Opportunities as a nurse, medical technician, and healthcare assistant.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/it-software">IT & Software</a></h3>
+                <p>Careers in web development, networking, and data analytics.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/construction">Construction</a></h3>
+                <p>Jobs in masonry, electrical work, and civil engineering.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/automobile">Automobile</a></h3>
+                <p>Vehicle repair, car detailing, and mechanical engineering.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/hospitality">Hospitality</a></h3>
+                <p>Hotel management, culinary arts, and event planning.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/electrician">Electrician</a></h3>
+                <p>Install electrical systems and work on industrial projects.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/plumbing">Plumbing</a></h3>
+                <p>Repair pipes, drainage systems, and heating fixtures.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/welding">Welding & Fabrication</a></h3>
+                <p>Build structures, repair equipment, and work in manufacturing.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/digital-marketing">Digital Marketing</a></h3>
+                <p>SEO, social media, and online advertising careers.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/beauty-wellness">Beauty & Wellness</a></h3>
+                <p>Makeup artistry, skincare, and spa therapy.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/fashion-design">Fashion Design</a></h3>
+                <p>Apparel design, tailoring, and fashion merchandising.</p>
+            </div>
+            <div class="career-card">
+                <h3><a href="/careers/agriculture">Agriculture & Farming</a></h3>
+                <p>Organic farming, greenhouse cultivation, and agribusiness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Choose a Career -->
+    <section class="section">
+        <h2>How to Choose the Right Career?</h2>
+        <ul class="career-tips">
+            <li>🔹 Assess your strengths and interests</li>
+            <li>🔹 Research job demand and future prospects</li>
+            <li>🔹 Explore vocational training programs</li>
+            <li>🔹 Gain hands-on experience through internships</li>
+            <li>🔹 Seek guidance from career mentors</li>
+        </ul>
+    </section>
+
+    <!-- Career Assessment -->
+    <section class="section">
+        <h2>Take a Career Assessment</h2>
+        <p style="text-align: center; color: #BDBDBD;">Not sure which career suits you best? Take our assessment test to receive personalized career suggestions.</p>
+        <div style="text-align: center;">
+            <a href="/test" class="btn">Start Assessment</a>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* training-centers.component.css */
+.training-centers-container {
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 5px;
+    font-size: 1rem;
+  }
+  
+  .training-center {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  .training-center h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  .training-center p {
+    font-size: 1rem;
+  }
+  
+  .ng-template {
+    text-align: center;
+  }
+  

@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.content {
+    /* text-align: center; */
+    padding: 40px;
+}
+
+button {
+    background-color: #bb86fc;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 1px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

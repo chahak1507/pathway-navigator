@@ -1,0 +1,26 @@
+<!-- training-centers.component.html -->
+<div style="padding-top: 100px;" class="training-centers-container">
+    <h1>Training Centers</h1>
+  
+    <section class="filter-section">
+      <label for="courseFilter">Select Course:</label>
+      <select id="courseFilter" [(ngModel)]="selectedCourse" (change)="filterTrainingCenters()">
+        <option value="">All Courses</option>
+        <option *ngFor="let course of uniqueCourses" [value]="course">{{ course }}</option>
+      </select>
+    </section>
+  
+    <section *ngIf="filteredCenters.length > 0; else noCenters">
+      <div class="training-center" *ngFor="let center of filteredCenters">
+        <h3>{{ center.name }}</h3>
+        <p><strong>Course Offered:</strong> {{ center.course }}</p>
+        <p><strong>Contact:</strong> {{ center.contact }}</p>
+        <p><strong>Address:</strong> {{ center.address }}</p>
+      </div>
+    </section>
+  
+    <ng-template #noCenters>
+      <p>No training centers available for the selected course.</p>
+    </ng-template>
+  </div>
+  

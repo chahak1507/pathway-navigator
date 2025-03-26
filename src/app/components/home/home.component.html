@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* General Styling */
+        *{
+            margin: 0;
+        }
+        body, h1, h2, h3, h4, p {
+            font-family: "Lato", sans-serif;
+            color: #ffffff;
+        }
+        body {
+            background-color: #121212; /* Dark Background */
+        }
+        .w3-top {
+            background-color: #1e1e1e;
+        }
+        .w3-button {
+            color: white !important;
+        }
+        .w3-button:hover {
+            background-color: #333 !important;
+        }
+        .content-section {
+            padding: 64px 16px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('your-image.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        /* Dark Theme Cards */
+        .w3-card {
+            background-color: #1e1e1e !important;
+            color: white !important;
+            min-height: 100px;
+        }
+        
+        /* Buttons */
+        .w3-button-dark {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .w3-button-dark:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            padding: 2px;
+            text-align: center;
+        }
+
+        /* Dark Theme Background */
+.dark-theme {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    padding: 50px 0;
+}
+
+/* Dark Theme for Timeline */
+.timeline {
+    --col-gap: 2rem;
+    --row-gap: 2rem;
+    --line-w: 0.25rem;
+    display: grid;
+    grid-template-columns: var(--line-w) 1fr;
+    grid-auto-columns: max-content;
+    column-gap: var(--col-gap);
+    list-style: none;
+    width: min(60rem, 90%);
+    margin-inline: auto;
+    position: relative;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 1 / span 20;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: calc(var(--line-w) / 2);
+}
+
+/* Timeline Items */
+.timeline li {
+    grid-column: 2;
+    --inlineP: 1.5rem;
+    margin-inline: var(--inlineP);
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+/* Date (Header) */
+.timeline li .date {
+    --dateH: 3rem;
+    height: var(--dateH);
+    margin-inline: calc(var(--inlineP) * -1);
+    text-align: center;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: grid;
+    place-content: center;
+    position: relative;
+    border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+
+/* Date Indicator */
+.timeline li .date::before {
+    content: "";
+    width: var(--inlineP);
+    aspect-ratio: 1;
+    background: var(--accent-color);
+    position: absolute;
+    top: 100%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    right: 0;
+}
+
+/* Circle Indicator */
+.timeline li .date::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    background: #1E1E1E;
+    border: 0.3rem solid var(--accent-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+/* Title and Description */
+.timeline li .title,
+.timeline li .descr {
+    background: #2C2C2C;
+    color: #FFFFFF;
+    position: relative;
+    padding-inline: 1.5rem;
+    font-weight: 300;
+}
+
+.timeline li .title {
+    font-weight: 500;
+    padding-block-start: 1.5rem;
+    padding-block-end: 1rem;
+}
+
+/* Responsive Two-Column Layout */
+@media (min-width: 40rem) {
+    .timeline {
+        grid-template-columns: 1fr var(--line-w) 1fr;
+    }
+    .timeline::before {
+        grid-column: 2;
+    }
+    .timeline li:nth-child(odd) {
+        grid-column: 1;
+    }
+    .timeline li:nth-child(even) {
+        grid-column: 3;
+    }
+    .timeline li:nth-child(odd) .date {
+        border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+    }
+}
+
+/* Dark Theme */
+.dark-theme {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    padding: 50px 0;
+}
+
+/* Training Centers Grid Layout */
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Training Center Boxes */
+.training-box {
+    background: #2C2C2C;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.training-box h3 {
+    color: #F1C40F;
+    font-size: 20px;
+}
+
+.training-box p {
+    font-size: 14px;
+    color: #BBBBBB;
+    margin: 5px 0;
+}
+
+.training-box span {
+    font-size: 12px;
+    color: #DDDDDD;
+}
+
+/* Learn More Button */
+.learn-more {
+    background-color: #E74C3C;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.learn-more:hover {
+    background-color: #C0392B;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Career Guidance Platform</h1>
+    </div>
+
+    <!-- Services Section - Timeline Style -->
+<div class="content-section w3-center" id="services">
+    <h2 class="w3-padding-16">What We Offer</h2>
+    
+    <ul class="timeline">
+        <li style="--accent-color:#41516C">
+            <div class="date">Career Paths</div>
+            <div class="title">Explore Various Career Options</div>
+            <div class="descr">Discover different career paths, their requirements, and future scope to make an informed choice.</div>
+        </li>
+        <li style="--accent-color:#FBCA3E">
+            <div class="date">Coaching Centers</div>
+            <div class="title">Find the Right Training</div>
+            <div class="descr">Get access to the best coaching and training centers to enhance your skills and career prospects.</div>
+        </li>
+        <li style="--accent-color:#E24A68">
+            <div class="date">Psychometric Testing</div>
+            <div class="title">Personalized Career Recommendations</div>
+            <div class="descr">Take scientifically designed psychometric tests to determine the most suitable career for you.</div>
+        </li>
+        <li style="--accent-color:#1B5F8C">
+            <div class="date">Funding & Scholarships</div>
+            <div class="title">Financial Aid & Support</div>
+            <div class="descr">Explore government and private scholarship opportunities to support your education and training.</div>
+        </li>
+    </ul>
+</div>
+
+
+    <div class="w3-row-padding w3-padding-64" id="career-options">
+        <div class="w3-center w3-padding-32">
+          <h3>Explore Career Opportunities</h3>
+          <p>Choose a career path that suits your skills and interests.</p>
+        </div>
+      
+        <div class="w3-third w3-margin-bottom">
+          <div class="w3-card w3-dark-grey w3-padding-32 w3-center">
+            <h3>Software Engineering</h3>
+            <p class="w3-opacity">Technology & Development</p>
+            <ul class="w3-ul">
+              <li><b>Skills Required:</b> Coding, Problem-solving, AI & ML</li>
+              <li><b>Job Roles:</b> Full Stack Developer, AI Engineer</li>
+              <li><b>Avg Salary:</b> ₹6L - ₹25L per year</li>
+              <li><b>Future Scope:</b> High demand, global opportunities</li>
+            </ul>
+            <button class="w3-button w3-green w3-margin-top">Explore More</button>
+          </div>
+        </div>
+      
+        <div class="w3-third w3-margin-bottom">
+          <div class="w3-card w3-dark-grey w3-padding-32 w3-center">
+            <h3>Digital Marketing</h3>
+            <p class="w3-opacity">Marketing & Analytics</p>
+            <ul class="w3-ul">
+              <li><b>Skills Required:</b> SEO, Content Writing, PPC, Analytics</li>
+              <li><b>Job Roles:</b> SEO Specialist, Social Media Manager</li>
+              <li><b>Avg Salary:</b> ₹3L - ₹12L per year</li>
+              <li><b>Future Scope:</b> Expanding industry, freelance options</li>
+            </ul>
+            <button class="w3-button w3-green w3-margin-top">Explore More</button>
+          </div>
+        </div>
+      
+        <div class="w3-third w3-margin-bottom">
+          <div class="w3-card w3-dark-grey w3-padding-32 w3-center">
+            <h3>Graphic Designing</h3>
+            <p class="w3-opacity">Creativity & Visuals</p>
+            <ul class="w3-ul">
+              <li><b>Skills Required:</b> Adobe Photoshop, UI/UX, Branding</li>
+              <li><b>Job Roles:</b> UI Designer, Branding Expert</li>
+              <li><b>Avg Salary:</b> ₹4L - ₹15L per year</li>
+              <li><b>Future Scope:</b> Growing demand in media & startups</li>
+            </ul>
+            <button class="w3-button w3-green w3-margin-top">Explore More</button>
+          </div>
+        </div>
+      </div>
+   <!-- Training Centers Section -->
+<div class="content-section w3-center dark-theme" id="training-centers">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Training Centers</h2>
+    <p>Find the best training centers for your chosen career path.</p>
+
+    <div class="training-grid">
+        <div class="training-box">
+            <h3>Tech Skills Academy</h3>
+            <p>Specializes in software development, data science, and cybersecurity training.</p>
+            <span><b>Location:</b> New Delhi, India</span>
+            <span><b>Courses:</b> Python, Java, AI, Web Development</span>
+            <button class="learn-more">Learn More</button>
+        </div>
+        <div class="training-box">
+            <h3>Creative Arts Institute</h3>
+            <p>Focused on graphic design, animation, and filmmaking courses.</p>
+            <span><b>Location:</b> Mumbai, India</span>
+            <span><b>Courses:</b> UI/UX, Video Editing, Digital Art</span>
+            <button class="learn-more">Learn More</button>
+        </div>
+        <div class="training-box">
+            <h3>Industrial Training Hub</h3>
+            <p>Practical training in mechanical, electrical, and civil engineering.</p>
+            <span><b>Location:</b> Bangalore, India</span>
+            <span><b>Courses:</b> AutoCAD, PLC Automation, HVAC</span>
+            <button class="learn-more">Learn More</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Testimonials Section -->
+<div class="content-section w3-center" id="testimonials">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">What People Say</h2>
+    <p>Hear from individuals who have benefited from our career guidance.</p>
+
+    <div class="w3-row-padding w3-margin-top">
+        <!-- Testimonial 1 -->
+        <div class="w3-quarter w3-padding">
+            <div class="w3-card w3-padding w3-light-grey w3-round">
+                <p><em>"This platform helped me choose the perfect career path. The insights were truly valuable!"</em></p>
+                <h4>- Rahul Sharma</h4>
+                <p class="w3-opacity">Software Engineer</p>
+            </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="w3-quarter w3-padding">
+            <div class="w3-card w3-padding w3-light-grey w3-round">
+                <p><em>"The resources and guidance provided were top-notch. I landed my dream job!"</em></p>
+                <h4>- Neha Verma</h4>
+                <p class="w3-opacity">Digital Marketer</p>
+            </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="w3-quarter w3-padding">
+            <div class="w3-card w3-padding w3-light-grey w3-round">
+                <p><em>"I had no direction before, but this platform guided me towards my passion!"</em></p>
+                <h4>- Amit Patel</h4>
+                <p class="w3-opacity">Graphic Designer</p>
+            </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="w3-quarter w3-padding">
+            <div class="w3-card w3-padding w3-light-grey w3-round">
+                <p><em>"Highly recommended for students and professionals looking for career guidance."</em></p>
+                <h4>- Priya Singh</h4>
+                <p class="w3-opacity">Business Analyst</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Career Guidance Platform &copy; 2025</p>
+        <p>Follow us: 
+            <i class="fa fa-facebook"></i> 
+            <i class="fa fa-twitter"></i> 
+            <i class="fa fa-instagram"></i>
+        </p>
+    </footer>
+
+</body>
+</html>

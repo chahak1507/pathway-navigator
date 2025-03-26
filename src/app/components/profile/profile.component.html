@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        Profile
+    </title>
+
+    <style>
+        body {
+            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            display: flex;
+            color: antiquewhite;
+        }
+
+        .photo-container {
+            height: 100px;
+            width: 100px;
+            display: block;
+            background-color: aliceblue;
+            background-repeat: no-repeat;
+            background-image: var(--profile-img);
+            border-radius: 100%;
+            margin: 4px;
+            border: 8px solid wheat;
+        }
+
+        .container {
+            height: 420px;
+            width: 300px;
+            background-color: rgb(32, 31, 31);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: rgba(41, 40, 40, 0.2);
+            gap: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.1);
+        }
+
+        .cardutility {
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+
+            border-radius: 10px;
+        }
+
+        .des {
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            text-justify: auto;
+        }
+
+        .spaceicon {
+            gap: 10px;
+        }
+/* CSS */
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin: 4px;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+        
+    </style>
+</head>
+
+<body>
+    <div class="container" id="idcontainer">
+        <div class="photo">
+                <img class="photo-container" [src]="userProfileImg" alt="">
+        </div>
+        <div class="cardcontainer">
+            <div class="info front cardutility">
+                <div class="myname">
+                    {{name}}
+                </div>
+                <!-- <div class="mycontact spaceicon">
+                    <i class="fa-regular fa-phone 
+                    fa fa-sm light-icon dark-icon"></i>
+                    9393939393
+                </div> -->
+                <div></div>
+                <div class="myemail spaceicon">
+                    <i class="fa-regular fa-envelope 
+                    fa fa-sm light-icon dark-icon">
+                    </i>
+                    {{email}}
+                </div>
+                <!-- <div><span>Hobbies : </span>
+                    <i class="fa-sharp fa-light fa 
+                    fa-music fa-sm light-icon dark-icon">
+                    </i>
+                    <i class="fa-regular fa fa-code 
+                    fa-sm light-icon dark-icon"></i>
+                </div> -->
+                <div></div>
+                <button class="button-24" (click)="signOut()" role="button">Sign Out</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- <script>
+        let button = document.querySelector("#btnid");
+        let boltogglebtn = false;
+        let container = document.querySelector("#idcontainer")
+
+        button.addEventListener("click", function () {
+            if (boltogglebtn) {
+                button.innerHTML = "Light";
+                button.style.cssText =
+                    "background-color:white; color:black";
+                container.style.cssText =
+                    "background-color:black; color:white"
+
+            }
+            else {
+                button.innerHTML = "Dark";
+                button.style.cssText =
+                    "background-color:black; color:white";
+                container.style.cssText =
+                    "background-color:white; color:black"
+            }
+            boltogglebtn = !boltogglebtn;
+        })
+    </script> -->
+    <script>
+        
+    </script>
+</body>
+
+</html>
