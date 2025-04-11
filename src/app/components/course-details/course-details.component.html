@@ -1,0 +1,65 @@
+<!-- course-details.component.html -->
+<div class="course-details-container">
+  <div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Loading course details...</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+    <button routerLink="/courses">Back to Courses</button>
+  </div>
+
+  <div *ngIf="!loading && !error && course" class="course-content">
+    <div class="course-header">
+      <div class="breadcrumb">
+        <a routerLink="/courses">Courses</a> &gt; {{ course.title }}
+      </div>
+      <h1 class="course-title">{{ course.title }}</h1>
+
+      <div class="course-meta">
+        <div class="instructor">
+          <span class="label">Instructor:</span> {{ course.instructor }}
+        </div>
+        <div class="level">
+          <span class="label">Level:</span> {{ course.level }}
+        </div>
+        <div class="duration">
+          <span class="label">Duration:</span> {{ course.duration }}
+        </div>
+        <div class="ratings" *ngIf="course.ratings">
+          <span class="stars">
+            ★ {{ course.ratings.average | number:'1.1-1' }}
+          </span>
+          <span class="count">({{ course.ratings.count }} ratings)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-main">
+      <div class="course-image-container">
+        <img [src]="course.imageUrl" [alt]="course.title" class="course-image">
+      </div>
+
+      <div class="course-details">
+        <div class="course-description">
+          <h2>Course Description</h2>
+          <p>{{ course.description }}</p>
+        </div>
+
+        <div class="course-topics">
+          <h2>What You'll Learn</h2>
+          <ul>
+            <li *ngFor="let topic of course.topics">{{ topic }}</li>
+          </ul>
+        </div>
+
+        <div class="course-enrollment">
+          <div class="price-tag">{{ course.price | currency }}</div>
+          <button class="enroll-button">Enroll Now</button>
+          <button class="wishlist-button">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

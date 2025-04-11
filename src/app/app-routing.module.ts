@@ -10,6 +10,7 @@ import { CourseTrackingComponent } from './components/course-tracking/course-tra
 import { TrainingCentersComponent } from './components/training-centers/training-centers.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './auth.guard';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -31,6 +32,11 @@ const routes: Routes = [
   {
     path: 'career-exploration',
     component: CareerExplorationComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'course-tracking/:id',
+    component: CourseDetailsComponent,
     canActivate: [AuthGuard],
   },
   {

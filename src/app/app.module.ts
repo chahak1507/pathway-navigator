@@ -13,6 +13,7 @@ import { CourseTrackingComponent } from './components/course-tracking/course-tra
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 import { TrainingCentersComponent } from './components/training-centers/training-centers.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
 // import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
@@ -26,15 +27,12 @@ import { ProfileComponent } from './components/profile/profile.component';
     CourseTrackingComponent,
     LoginSignupComponent,
     TrainingCentersComponent,
-    ProfileComponent
+    ProfileComponent,
+    CourseDetailsComponent,
     // NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
