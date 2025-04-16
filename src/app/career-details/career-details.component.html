@@ -1,0 +1,94 @@
+<!-- career-detail.component.html -->
+
+<div class="career-detail-container">
+  <div *ngIf="loading" class="loading-container">
+    <div class="spinner"></div>
+    <p>Loading career details...</p>
+  </div>
+
+  <div *ngIf="error" class="error-container">
+    <div class="error-icon">!</div>
+    <h3>Error</h3>
+    <p>{{ error }}</p>
+    <button class="primary-btn" routerLink="/career-paths">
+      Back to Career Paths
+    </button>
+  </div>
+
+  <div *ngIf="careerPath && !loading" class="career-content">
+    <div class="header-section">
+      <div class="back-btn-container">
+        <a routerLink="/career-paths" class="back-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 12H5M5 12L12 19M5 12L12 5"
+              stroke="#FFD700"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Back to Career Paths
+        </a>
+      </div>
+      <h1>{{ careerPath.title }}</h1>
+      <div class="category-badge">{{ careerPath.category }}</div>
+    </div>
+
+    <div class="career-grid">
+      <div class="career-image">
+        <img
+          [src]="careerPath.imageUrl || '/assets/images/default-career.jpg'"
+          [alt]="careerPath.title"
+        />
+      </div>
+
+      <div class="career-details">
+        <div class="detail-section">
+          <h2>Description</h2>
+          <p>{{ careerPath.description }}</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Average Salary</h2>
+          <div class="salary">
+            {{ getSalaryFormatted(careerPath.averageSalary) }}
+          </div>
+          <p class="per-year">per year</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Required Skills</h2>
+          <div class="skills-container">
+            <span
+              class="skill-badge"
+              *ngFor="let skill of careerPath.requiredSkills"
+              >{{ skill }}</span
+            >
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>Education Requirements</h2>
+          <p>{{ careerPath.educationRequirements }}</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Job Outlook</h2>
+          <div
+            class="job-outlook"
+            [ngClass]="getJobOutlookClass(careerPath.jobOutlook)"
+          >
+            {{ careerPath.jobOutlook }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

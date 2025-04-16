@@ -11,6 +11,7 @@ import { TrainingCentersComponent } from './components/training-centers/training
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './auth.guard';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { CareerDetailsComponent } from './career-details/career-details.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path: 'test',
     component: PsychometricTestComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'career-exploration/:id',
+    component: CareerDetailsComponent,
     canActivate: [AuthGuard],
   },
   {

@@ -1,0 +1,254 @@
+/* career-detail.component.css */
+
+.career-detail-container {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.loading-container .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 215, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffd700;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-container p {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.error-container .error-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ff3b30;
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.error-container h3 {
+  color: #ff3b30;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.error-container p {
+  margin-bottom: 2rem;
+  color: #cccccc;
+}
+
+.career-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-section {
+  margin-bottom: 2rem;
+}
+
+.header-section .back-btn-container {
+  margin-bottom: 1rem;
+}
+
+.header-section .back-btn {
+  display: inline-flex;
+  align-items: center;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.header-section .back-btn svg {
+  margin-right: 0.5rem;
+}
+
+.header-section .back-btn:hover {
+  opacity: 0.8;
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.header-section .category-badge {
+  display: inline-block;
+  background-color: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.career-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.career-details .detail-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.career-details .detail-section:last-child {
+  border-bottom: none;
+}
+
+.career-details .detail-section h2 {
+  font-size: 1.3rem;
+  color: #ffd700;
+  margin-bottom: 0.75rem;
+}
+
+.career-details .detail-section p {
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.career-details .salary {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.career-details .per-year {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin-top: -0.25rem;
+}
+
+.career-details .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.career-details .skill-badge {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+.career-details .job-outlook {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.career-details .job-outlook.excellent {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+.career-details .job-outlook.good {
+  background-color: rgba(33, 150, 243, 0.2);
+  color: #2196f3;
+}
+
+.career-details .job-outlook.average {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.career-details .job-outlook.poor {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+.action-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-buttons .primary-btn {
+  background-color: #ffd700;
+  color: #121212;
+  border: none;
+}
+
+.action-buttons .primary-btn:hover {
+  background-color: #ccac00;
+}
+
+.action-buttons .secondary-btn {
+  background-color: transparent;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+}
+
+.action-buttons .secondary-btn:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}

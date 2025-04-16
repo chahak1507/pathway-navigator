@@ -14,6 +14,7 @@ import { LoginSignupComponent } from './components/login-signup/login-signup.com
 import { TrainingCentersComponent } from './components/training-centers/training-centers.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { CareerDetailsComponent } from './career-details/career-details.component';
 // import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CourseDetailsComponent } from './components/course-details/course-detai
     TrainingCentersComponent,
     ProfileComponent,
     CourseDetailsComponent,
+    CareerDetailsComponent,
     // NavbarComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
