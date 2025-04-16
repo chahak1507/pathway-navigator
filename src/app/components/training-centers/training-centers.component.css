@@ -1,3 +1,23 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+label {
+  color: #cccccc;
+}
+select {
+  padding: 5px;
+  font-size: 1rem;
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
 .training-center-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
