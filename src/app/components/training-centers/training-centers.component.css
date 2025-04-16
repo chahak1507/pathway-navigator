@@ -1,42 +1,6 @@
-.training-centers-container {
-  padding: 20px;
-  background-color: #121212;
-  color: #e0e0e0;
-  min-height: 100vh;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.filter-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  gap: 10px;
-}
-
-label {
-  color: #cccccc;
-  font-size: 1rem;
-}
-
-select {
-  padding: 8px 12px;
-  font-size: 1rem;
-  background-color: #1f1f1f;
-  color: #e0e0e0;
-  border: 1px solid #333;
-  border-radius: 5px;
-}
-
-/* Grid Layout for Training Center Cards */
 .training-center-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   gap: 20px;
 }
 
@@ -65,8 +29,15 @@ select {
   color: #cccccc;
 }
 
-.no-centers-text {
-  text-align: center;
-  color: #aaaaaa;
-  margin-top: 20px;
+/* Responsive breakpoints */
+@media (max-width: 992px) {
+  .training-center-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .training-center-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
 }
