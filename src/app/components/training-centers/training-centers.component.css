@@ -1,26 +1,31 @@
 .training-centers-container {
   padding: 20px;
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text */
+  background-color: #121212;
+  color: #e0e0e0;
   min-height: 100vh;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #ffffff;
 }
 
 .filter-section {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
 }
 
 label {
   color: #cccccc;
+  font-size: 1rem;
 }
 
 select {
-  padding: 5px;
+  padding: 8px 12px;
   font-size: 1rem;
   background-color: #1f1f1f;
   color: #e0e0e0;
@@ -28,27 +33,40 @@ select {
   border-radius: 5px;
 }
 
-.training-center {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+/* Grid Layout for Training Center Cards */
+.training-center-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.training-center h3 {
+.training-center-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.training-center-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+.training-center-card h3 {
   margin-top: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #ffffff;
 }
 
-.training-center p {
-  font-size: 1rem;
+.training-center-card p {
+  font-size: 0.95rem;
   color: #cccccc;
 }
 
-.ng-template {
+.no-centers-text {
   text-align: center;
   color: #aaaaaa;
+  margin-top: 20px;
 }
