@@ -9,34 +9,58 @@ export class TrainingCentersComponent {
   // List of all available training centers with their details
   trainingCenters = [
     {
-      name: 'Tech Academy',
+      name: 'SKIT Jaipur',
       course: 'Software Development',
-      contact: '123-456-7890',
-      address: '123 Tech Street, Cityville'
+      contact: '0141 350 0300',
+      address: 'Jagatpura, Jaipur'
     },
     {
-      name: 'Data Science Hub',
+      name: 'Hadoop Big Data',
       course: 'Data Science',
-      contact: '234-567-8901',
-      address: '456 Data Lane, Dataville'
+      contact: '0141 350 0089',
+      address: 'Vaishali Nagar, Jaipur'
     },
     {
-      name: 'Health Institute',
-      course: 'Healthcare Management',
-      contact: '345-678-9012',
-      address: '789 Health Blvd, Medicity'
-    },
-    {
-      name: 'Coding Bootcamp',
+      name: 'Coding Ninjas',
       course: 'Software Development',
-      contact: '456-789-0123',
-      address: '101 Code Ave, Codetown'
+      contact: '1800 123 3598',
+      address: 'Tonk Road, Jaipur'
     },
     {
       name: 'Design Studio',
       course: 'Graphic Design',
-      contact: '567-890-1234',
-      address: '102 Design Rd, Artcity'
+      contact: '7014046584',
+      address: 'Mansarovar, Jaipur'
+    },
+    {
+      name: 'RedSketch Institute',
+      course: 'Graphic Design',
+      contact: '0141 254 2547',
+      address: 'Malviya Nagar, Jaipur'
+    },
+    {
+      name: 'Samyak Classes',
+      course: 'Software Development',
+      contact: '0141 254 7852',
+      address: 'Gopalpura, Jaipur'
+    },
+    {
+      name: 'Engineers Academy',
+      course: 'Software Development',
+      contact: '087644 74451',
+      address: 'Jaipur'
+    },
+    {
+      name: 'CyberCell Academy',
+      course: 'Cybersecurity',
+      contact: '0141 254 7482',
+      address: 'Jaipur'
+    },
+    {
+      name: 'Engineers Academy',
+      course: 'Cybersecurity',
+      contact: '087644 74451',
+      address: 'Jaipur'
     }
   ];
 
