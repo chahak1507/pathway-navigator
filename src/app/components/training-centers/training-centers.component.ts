@@ -9,10 +9,10 @@ export class TrainingCentersComponent {
   // List of all available training centers with their details
   trainingCenters = [
     {
-      name: 'SKIT Jaipur',
+      name: 'Skills Academy',
       course: 'Software Development',
       contact: '0141 350 0300',
-      address: 'Jagatpura, Jaipur'
+      address: 'Jaipur'
     },
     {
       name: 'Hadoop Big Data',
