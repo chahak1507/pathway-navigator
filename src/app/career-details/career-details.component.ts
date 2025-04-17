@@ -48,7 +48,7 @@ export class CareerDetailsComponent {
   }
 
   getSalaryFormatted(salary: number): string {
-    return salary ? `$${salary.toLocaleString()}` : 'Not specified';
+    return salary ? `Rs.${salary.toLocaleString()}` : 'Not specified';
   }
 
   getJobOutlookClass(outlook: string): string {
