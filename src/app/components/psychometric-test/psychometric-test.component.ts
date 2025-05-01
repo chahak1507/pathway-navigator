@@ -7,17 +7,22 @@ import { Component } from '@angular/core';
 })
 export class PsychometricTestComponent {
   answers = {
-    indoors: '',
-    handsOn: '',
-    technology: '',
-    helpingPeople: '',
-    physicalWork: '',
-    problemSolving: '',
-    teamwork: '',
-    numbers: '',
-    creativity: '',
-    business: '',
-  };
+  codeLove: '',
+  uiDesign: '',
+  cloudInfra: '',
+  dataDriven: '',
+  iotCuriosity: '',
+  aiExcitement: '',
+  hardwareHandsOn: '',
+  bugHunting: '',
+  cyberAware: '',
+  techBiz: '',
+  techWriting: '',
+  leadership: '',
+  innovation: '',
+  seoInterest: '',
+  backendPref: ''
+};
 
   resultText = 'Take the test to see your result.';
 
@@ -26,31 +31,36 @@ export class PsychometricTestComponent {
   }
 
   onSubmit() {
-    const answers = this.answers;
+    const a = this.answers;
 
-    let result = 'Based on your responses, we suggest: ';
+let result = 'Based on your responses, we suggest: ';
 
-    if (answers.technology === 'yes' && answers.problemSolving === 'yes') {
-      result += 'Software Development, Data Science, or IT Support.';
-    } else if (answers.handsOn === 'yes' && answers.physicalWork === 'yes') {
-      result += 'Construction, Electrical Work, or Automotive Engineering.';
-    } else if (answers.helpingPeople === 'yes') {
-      result += 'Healthcare, Teaching, or Social Work.';
-    } else if (answers.indoors === 'outdoors') {
-      result += 'Agriculture, Forestry, or Environmental Science.';
-    } else if (answers.creativity === 'yes') {
-      result += 'Graphic Design, Writing, or Media Production.';
-    } else if (answers.numbers === 'yes') {
-      result += 'Accounting, Finance, or Data Analytics.';
-    } else if (answers.business === 'yes') {
-      result += 'Entrepreneurship, Marketing, or Business Administration.';
-    } else {
-      result +=
-        'A multidisciplinary career like Project Management or Digital Marketing.';
-    }
+let suggestions = [];
 
-    this.resultText = result;
-    this.submitPsychometricTest(result);
+if (a.codeLove === 'yes') suggestions.push('Software Development, Full Stack Development, or Backend Engineering');
+if (a.uiDesign === 'yes') suggestions.push('UI/UX Design, Frontend Development, or Graphic Design');
+if (a.cloudInfra === 'yes') suggestions.push('Cloud Engineering, DevOps, or Infrastructure Management');
+if (a.dataDriven === 'yes') suggestions.push('Data Science, Data Analytics, or Business Intelligence');
+if (a.iotCuriosity === 'yes') suggestions.push('IoT Development, Embedded Systems, or Automation Engineering');
+if (a.aiExcitement === 'yes') suggestions.push('AI Engineering, Machine Learning, or Deep Learning Research');
+if (a.hardwareHandsOn === 'yes') suggestions.push('Hardware Design, Robotics, or Embedded Programming');
+if (a.bugHunting === 'yes') suggestions.push('Quality Assurance, Software Testing, or Test Automation');
+if (a.cyberAware === 'yes') suggestions.push('Cybersecurity, Ethical Hacking, or Information Security');
+if (a.techBiz === 'yes') suggestions.push('Product Management, Tech Entrepreneurship, or Solution Architecture');
+if (a.techWriting === 'yes') suggestions.push('Technical Writing, Content Development, or Documentation');
+if (a.leadership === 'yes') suggestions.push('Project Management, Scrum Master, or Technical Lead');
+if (a.innovation === 'yes') suggestions.push('Startup Founder, R&D Engineer, or Innovation Strategist');
+if (a.seoInterest === 'yes') suggestions.push('Digital Marketing, SEO Analytics, or Growth Hacking');
+if (a.backendPref === 'yes') suggestions.push('Backend Development, Database Administration, or System Architecture');
+
+if (suggestions.length > 0) {
+  result += suggestions.join('; ') + '.';
+} else {
+  result += 'a multidisciplinary technical role like Tech Support, IT Services, or Digital Operations.';
+}
+
+this.resultText = result;
+this.submitPsychometricTest(result);
   }
 
   async submitPsychometricTest(resultText: string) {
