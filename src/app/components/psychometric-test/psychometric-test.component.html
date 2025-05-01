@@ -97,72 +97,106 @@
         <h1>Psychometric Test</h1>
 
         <section class="section">
-            <h2>Discover Your Best Career Path</h2>
-            <p>Answer these questions to receive personalized career recommendations.</p>
+            <h2>Find Your Ideal Technical Career Path</h2>
+<p>Answer the following questions to discover which tech roles best suit your interests and strengths.</p>
 
-            <form id="test-form" (ngSubmit)="onSubmit()">
-                <label for="question1">Do you prefer working indoors or outdoors?</label>
-                <select id="question1" [(ngModel)]="answers.indoors" name="question1">
-                    <option value="indoors">Indoors</option>
-                    <option value="outdoors">Outdoors</option>
-                </select>
+<form id="tech-career-form" (ngSubmit)="onSubmit()">
 
-                <label for="question2">Do you enjoy working with your hands?</label>
-                <select id="question2" [(ngModel)]="answers.handsOn" name="question2">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q1">Do you find joy in writing clean and logical code?</label>
+    <select id="q1" [(ngModel)]="answers.codeLove" name="q1">
+        <option value="yes">Absolutely</option>
+        <option value="no">Not really</option>
+    </select>
 
-                <label for="question3">Do you like working with technology?</label>
-                <select id="question3" [(ngModel)]="answers.technology" name="question3">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q2">Are you passionate about creating engaging user interfaces and visual experiences?</label>
+    <select id="q2" [(ngModel)]="answers.uiDesign" name="q2">
+        <option value="yes">Yes, I love designing</option>
+        <option value="no">No, it's not my thing</option>
+    </select>
 
-                <label for="question4">Do you enjoy helping people directly?</label>
-                <select id="question4" [(ngModel)]="answers.helpingPeople" name="question4">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q3">Would you enjoy setting up and managing servers or cloud infrastructure?</label>
+    <select id="q3" [(ngModel)]="answers.cloudInfra" name="q3">
+        <option value="yes">Yes, infrastructure interests me</option>
+        <option value="no">No, I prefer other areas</option>
+    </select>
 
-                <label for="question5">Are you comfortable with physical work?</label>
-                <select id="question5" [(ngModel)]="answers.physicalWork" name="question5">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q4">Do you often analyze patterns or statistics to solve problems?</label>
+    <select id="q4" [(ngModel)]="answers.dataDriven" name="q4">
+        <option value="yes">Yes, I enjoy data analysis</option>
+        <option value="no">No, not really</option>
+    </select>
 
-                <label for="question6">Do you like problem-solving?</label>
-                <select id="question6" [(ngModel)]="answers.problemSolving" name="question6">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q5">Are you curious about how smart devices and sensors interact?</label>
+    <select id="q5" [(ngModel)]="answers.iotCuriosity" name="q5">
+        <option value="yes">Definitely</option>
+        <option value="no">Not really</option>
+    </select>
 
-                <label for="question7">Do you prefer working alone or in a team?</label>
-                <select id="question7" [(ngModel)]="answers.teamwork" name="question7">
-                    <option value="alone">Alone</option>
-                    <option value="team">Team</option>
-                </select>
+    <label for="q6">Do topics like artificial intelligence and robotics excite you?</label>
+    <select id="q6" [(ngModel)]="answers.aiExcitement" name="q6">
+        <option value="yes">Yes, very much</option>
+        <option value="no">Not that much</option>
+    </select>
 
-                <label for="question8">Do you enjoy working with numbers and data?</label>
-                <select id="question8" [(ngModel)]="answers.numbers" name="question8">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q7">Would you be interested in building or repairing hardware devices?</label>
+    <select id="q7" [(ngModel)]="answers.hardwareHandsOn" name="q7">
+        <option value="yes">Yes, I like hardware tasks</option>
+        <option value="no">No, I prefer software</option>
+    </select>
 
-                <label for="question9">Are you interested in creative fields (design, writing, media)?</label>
-                <select id="question9" [(ngModel)]="answers.creativity" name="question9">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q8">Do you enjoy finding bugs and breaking software?</label>
+    <select id="q8" [(ngModel)]="answers.bugHunting" name="q8">
+        <option value="yes">Yes, QA is fun</option>
+        <option value="no">No, not for me</option>
+    </select>
 
-                <label for="question10">Would you like to start your own business someday?</label>
-                <select id="question10" [(ngModel)]="answers.business" name="question10">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+    <label for="q9">Are you someone who keeps up with cybersecurity threats and ethical hacking?</label>
+    <select id="q9" [(ngModel)]="answers.cyberAware" name="q9">
+        <option value="yes">Yes, I stay updated</option>
+        <option value="no">No, not interested</option>
+    </select>
 
-                <button type="submit">Submit</button>
-            </form>
+    <label for="q10">Would you enjoy turning technical ideas into real-world business solutions?</label>
+    <select id="q10" [(ngModel)]="answers.techBiz" name="q10">
+        <option value="yes">Yes, I'm business-minded</option>
+        <option value="no">No, I prefer execution</option>
+    </select>
+
+    <label for="q11">Do you like explaining technical concepts in a simple and clear way?</label>
+    <select id="q11" [(ngModel)]="answers.techWriting" name="q11">
+        <option value="yes">Yes, I'm good at it</option>
+        <option value="no">Not really</option>
+    </select>
+
+    <label for="q12">Would you enjoy leading a team to build a tech product?</label>
+    <select id="q12" [(ngModel)]="answers.leadership" name="q12">
+        <option value="yes">Yes, I enjoy leadership</option>
+        <option value="no">I prefer individual work</option>
+    </select>
+
+    <label for="q13">Do you often come up with new app or tech product ideas?</label>
+    <select id="q13" [(ngModel)]="answers.innovation" name="q13">
+        <option value="yes">Yes, all the time</option>
+        <option value="no">Rarely</option>
+    </select>
+
+    <label for="q14">Are you interested in how websites and apps are optimized for search engines?</label>
+    <select id="q14" [(ngModel)]="answers.seoInterest" name="q14">
+        <option value="yes">Yes, I follow SEO/analytics</option>
+        <option value="no">Not interested</option>
+    </select>
+
+    <label for="q15">Do you feel more confident working behind the scenes (backend, security, infra) than client-facing roles?</label>
+    <select id="q15" [(ngModel)]="answers.backendPref" name="q15">
+        <option value="yes">Yes, backend suits me</option>
+        <option value="no">I prefer frontend or client interaction</option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+
+<!-- <p *ngIf="resultText">{{ resultText }}</p> -->
+
         </section>
 
         <section class="result-section">
